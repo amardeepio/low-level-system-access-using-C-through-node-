@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Information</title>
+</head>
+<body>
+    <h1>System Information</h1>
+    <div id="systemInfo" style="border: 1px solid black; padding: 10px;"></div>
+
+    <script>
+        // Fetch system information from the server
+        fetch('/systeminfo')
+            .then(response => response.json())
+            .then(data => {
+                const systemInfoDiv = document.getElementById('systemInfo');
+                systemInfoDiv.innerHTML = `
+                    <p>Uptime: ${data.uptime} seconds</p>
+                    <p>Total RAM: ${data.totalram} bytes</p>
+                    <p>Free RAM: ${data.freeram} bytes</p>
+                `;
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>

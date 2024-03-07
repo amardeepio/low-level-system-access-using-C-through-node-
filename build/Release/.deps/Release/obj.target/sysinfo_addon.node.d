@@ -1,0 +1,1 @@
+cmd_Release/obj.target/sysinfo_addon.node := g++ -o Release/obj.target/sysinfo_addon.node -shared -pthread -rdynamic -m64  -Wl,-soname=sysinfo_addon.node -Wl,--start-group Release/obj.target/sysinfo_addon/sysinfo_addon.o -Wl,--end-group -ldl

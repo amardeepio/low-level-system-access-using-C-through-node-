@@ -1,0 +1,1 @@
+cmd_Release/sysinfo_addon.node := ln -f "Release/obj.target/sysinfo_addon.node" "Release/sysinfo_addon.node" 2>/dev/null || (rm -rf "Release/sysinfo_addon.node" && cp -af "Release/obj.target/sysinfo_addon.node" "Release/sysinfo_addon.node")
